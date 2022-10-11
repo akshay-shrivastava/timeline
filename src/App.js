@@ -38,8 +38,8 @@ const initItems = [
     id: 3,
     group: 3,
     title: `${moment().add(-0.5, 'hour')} to ${moment().add(0.5, 'hour')}`,
-    start_time: moment().add(-2000 , 'hour'),
-    end_time: moment().add(-1990, 'hour')
+    start_time: moment().add(0.5 , 'hour'),
+    end_time: moment().add(1, 'hour')
   },
   {
     id: 4,
@@ -119,6 +119,8 @@ const RenderProgramfilter = () => {
     <RenderProgramfilter />
     <Timeline
     groups={filteredGroups}
+    maxZoom={30 * 24 * 60 * 100 * 1000}
+    minZoom={1 * 60 * 100 * 1000}
     items={items}
     defaultTimeStart={moment().add(-12, 'hour')}
     defaultTimeEnd={moment().add(12, 'hour')}
